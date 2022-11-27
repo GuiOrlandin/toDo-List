@@ -1,0 +1,51 @@
+.wrapperTask {
+  display: flex;
+  align-items: center;
+  padding: 1rem;
+  justify-content: space-between;
+  background: var(--gray-500);
+  height: 4.5rem;
+  width: 45.3rem;
+  margin: auto;
+  border-radius: 8px;
+}
+
+.riskText {
+  text-decoration: line-through;
+}
+
+.wrapperTask img {
+  cursor: pointer;
+  width: 1.5rem;
+  height: 1.5rem;
+  margin-right: 0.75rem;
+}
+
+.wrapperTask + .wrapperTask {
+  margin-top: 1rem;
+}
+
+.wrapperTask label {
+  color: var(--gray-100);
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  font-size: 0.875rem;
+  margin-left: 0.75rem;
+}
+
+.wrapperTask input {
+  appearance: none;
+}
+
+
+
+.trash {
+  color: var(--gray-400);
+  cursor: pointer;
+  margin-left: 0.75rem;
+}
+
+.trash:hover {
+  color: var(--red);
+}

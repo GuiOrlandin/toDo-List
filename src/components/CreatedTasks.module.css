@@ -1,0 +1,61 @@
+.countertasks {
+  display: flex;
+  justify-content: space-between;
+  margin: auto;
+  align-items: center;
+  max-width: 46rem;
+}
+.createdTasks,
+.completedTasks {
+  display: flex;
+  margin-top: 4rem;
+  margin-right: 0.5rem;
+  line-height: 1.4;
+  font-weight: 700;
+  font-size: 0.875rem;
+  gap: 0.5rem;
+}
+
+.createdTasks p:nth-child(2),
+.completedTasks p:nth-child(2) {
+  display: flex;
+  justify-content: center;
+  border-radius: 999px;
+  background: #333333;
+  width: 1.5625rem;
+  height: 1.1875;
+  color: white;
+}
+
+.createdTasks {
+  color: var(--blue);
+  margin-right: rem;
+}
+
+.completedTasks {
+  color: var(--purple);
+}
+
+.tasksBox {
+  display: flex;
+  border-top: 1px solid #333333;
+  border-radius: 8px;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  max-width: 45.3rem;
+  padding-top: 4rem;
+  margin: 1.5rem auto;
+}
+.tasksBox img {
+  width: 3.5rem;
+  height: 3.5rem;
+}
+.tasksBox p {
+    display: flex;
+    flex-direction: column;
+    margin-top: 1rem;
+    line-height: 1.4;
+    font-size: 1rem;
+    color: var(--gray-400)
+}
