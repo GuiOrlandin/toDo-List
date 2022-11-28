@@ -7,7 +7,7 @@ import { useState } from "react";
 import { DeleteTaskModal } from "./DeleteTaskModal";
 
 interface task {
-  id: number;
+  id: string;
   content: string;
   isChecked: boolean;
 }
@@ -16,7 +16,7 @@ interface taskProps {
   task: task;
   taskList: Array<task>;
   handleDeleteTask: (taskToDelete: task) => void;
-  handleCompletedTask: (taskId: number) => void;
+  handleCompletedTask: (taskId: string) => void;
 }
 
 Modal.setAppElement("#root");
@@ -45,12 +45,12 @@ export function Task({
   return (
     <div className={styles.wrapperTask}>
       {task.isChecked ? (
-        <label className={styles.riskText} htmlFor={task.content}>
+        <label className={styles.riskText} htmlFor={task.id}>
           <img src={checkedicon} alt="" />
           {task.content}
         </label>
       ) : (
-        <label htmlFor={task.content}>
+        <label htmlFor={task.id}>
           <img src={checkicon} alt="" />
           {task.content}
         </label>
@@ -59,7 +59,7 @@ export function Task({
         onChange={() => handleCompletedTask(task.id)}
         checked={checked}
         type="checkbox"
-        id={task.content}
+        id={task.id}
         value="on"
       />
       <button onClick={handleOpenModal} className={styles.trash}>

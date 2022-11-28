@@ -1,19 +1,20 @@
 import "./global.css";
 import styles from "./App.module.css";
-import { ChangeEvent, FormEvent, useEffect, useState } from "react";
+import nextId from "react-id-generator";
+import { ChangeEvent, FormEvent, useState } from "react";
 import { Header } from "./components/Header";
 import { AddTask } from "./components/AddTask";
 import { CreatedTasks } from "./components/CreatedTasks";
 
 const initialTask = [
   {
-    id: 1,
+    id: nextId(),
     content: "text1",
     publishedAt: new Date("2022-11-20 21:52:00"),
   }
 ];
 interface taskProps {
-  id: number;
+  id: string;
   content: string;
   isChecked: boolean;
 }
@@ -24,13 +25,13 @@ export function App() {
 
   function handleCreateNewTask(event: FormEvent) {
     event.preventDefault();
-    const newId = tasks.length;
+    const newId = nextId();
 
     setTasks([...tasks, { id: newId, content: newTaskText, isChecked: false }]);
     setNewTaskText("");
   }
 
-  function handleCompletedTask(taskId: number) {
+  function handleCompletedTask(taskId: string) {
     const newTasks = tasks.map((task) => {
       if (task.id === taskId) {
         return {

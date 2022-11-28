@@ -5,11 +5,11 @@ import { Task } from "./Task";
 interface cratedTasksProps {
   taskList: Array<taskProps>;
   handleDeleteTask: (taskToDelete: taskProps) => void;
-  handleCompletedTask: (taskId: number) => void;
+  handleCompletedTask: (taskId: string) => void;
 }
 
 interface taskProps {
-  id: number;
+  id: string;
   content: string;
   isChecked: boolean;
 }
