@@ -9,7 +9,12 @@ interface addTaskProps {
   placeHolder: string;
 }
 
-export function AddTask({ handleCreateNewTask, handleAddTask, newTaskText, placeHolder }: addTaskProps) {
+export function AddTask({
+  handleCreateNewTask,
+  handleAddTask,
+  newTaskText,
+  placeHolder,
+}: addTaskProps) {
   return (
     <div>
       <form onSubmit={handleCreateNewTask} className={styles.addTask}>

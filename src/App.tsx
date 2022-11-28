@@ -60,7 +60,7 @@ export function App() {
           handleCreateNewTask={handleCreateNewTask}
           handleAddTask={handleAddTask}
           newTaskText={newTaskText}
-          placeHolder="Adicionar uma nova tarefa"
+          placeHolder="Adicione uma nova tarefa"
         />
         <CreatedTasks
           handleDeleteTask={handleDeleteTask}

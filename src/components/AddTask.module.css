@@ -1,5 +1,6 @@
 .addTask {
   display: flex;
+  font-family: 'Inter', sans-serif;
   justify-content: center;
   grid-template-columns: 1fr;
   gap: 0.5rem;
@@ -8,6 +9,7 @@
 .addTask textarea {
   font-size: 1rem;
   resize: none;
+  font-size: 1rem;
   border: 0;
   width: 39.875rem;
   padding: 1rem;
