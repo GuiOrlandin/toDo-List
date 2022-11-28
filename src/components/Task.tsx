@@ -27,7 +27,6 @@ export function Task({
   handleDeleteTask,
   handleCompletedTask,
 }: taskProps) {
-  const [checked, setChecked] = useState(task.isChecked);
   const [modalIsOpen, setIsOpen] = useState(false);
 
   function handleOpenModal() {
@@ -57,7 +56,6 @@ export function Task({
       )}
       <input
         onChange={() => handleCompletedTask(task.id)}
-        checked={checked}
         type="checkbox"
         id={task.id}
         value="on"
