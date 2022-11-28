@@ -10,12 +10,7 @@ const initialTask = [
     id: 1,
     content: "text1",
     publishedAt: new Date("2022-11-20 21:52:00"),
-  },
-  {
-    id: 2,
-    content: "text2",
-    publishedAt: new Date("2022-11-20 21:55:00"),
-  },
+  }
 ];
 interface taskProps {
   id: number;
@@ -35,6 +30,25 @@ export function App() {
     setNewTaskText("");
   }
 
+  function handleCompletedTask(taskId: number) {
+    const newTasks = tasks.map((task) => {
+      if (task.id === taskId) {
+        return {
+          ...task,
+          isChecked: !task.isChecked,
+        };
+      }
+      return task;
+    });
+    setTasks(newTasks);
+  }
+  function handleDeleteTask(taskToDelete: taskProps) {
+    const taskWithdoutDeleteOne = tasks.filter((task) => {
+      return task !== taskToDelete;
+    });
+    setTasks(taskWithdoutDeleteOne);
+  }
+
   function handleAddTask(event: ChangeEvent<HTMLTextAreaElement>) {
     setNewTaskText(event.target.value);
   }
@@ -48,7 +62,11 @@ export function App() {
           newTaskText={newTaskText}
           placeHolder="Adicionar uma nova tarefa"
         />
-        <CreatedTasks taskList={tasks} />
+        <CreatedTasks
+          handleDeleteTask={handleDeleteTask}
+          handleCompletedTask={handleCompletedTask}
+          taskList={tasks}
+        />
       </div>
     </div>
   );

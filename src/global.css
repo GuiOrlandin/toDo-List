@@ -19,7 +19,7 @@
   --blue: #4ea8de;
   --blueDark: #1e6f9f;
 
-  --red: #e25858;
+  --red: #F75A68;
 
 
 
@@ -33,4 +33,29 @@ body{
   font-family: 'Inter', sans-serif;
   outline: none;
   -webkit-font-smoothing: antialiased;
+}
+
+.reactModalOverlay {
+  background: rgba(0, 0, 0, 0.5);
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.reactModalContent {
+  width: 100%;
+  max-width: 432px;
+  background-color: var(--gray-800);
+  position: relative;
+}
+.reactModalClose {
+  position: absolute;
+  right: 1.5rem;
+  top: 1.5rem;
+  background: transparent;
+  transition: filter 0.2s;
 }

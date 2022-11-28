@@ -1,0 +1,51 @@
+.deleteModal {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    border-radius: 8px;
+    width: 27rem;
+    height: 14.875rem;
+     padding: 1.5rem 2rem 2rem 2rem;
+    background: var(--gray-600);
+}
+
+.deleteModal h1 {
+  font-size: 1.5rem;
+  color: var(--gray-100);
+  margin-bottom: 1.5rem;
+  font-weight: 700;
+}
+
+.deleteModal p {
+  font-size: 1rem;
+  font-weight: 400;
+  color: var(--gray-300);
+}
+
+.deleteModal button {
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: var(--gray-100);
+  background: transparent;
+  border: none;
+  width: 7.5rem;
+  height: 3rem;
+  cursor: pointer;
+  margin-top: 1.5rem;
+  border-radius: 8px;
+}
+
+.deleteModal button:nth-child(1):hover{
+    background: #29292E;
+  
+
+
+}
+.deleteModal button:nth-child(2):hover {
+  background: #29292E;
+    color: var(--red);
+    
+
+}

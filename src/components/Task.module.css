@@ -43,6 +43,8 @@
 .trash {
   color: var(--gray-400);
   cursor: pointer;
+  border: none;
+  background: transparent;
   margin-left: 0.75rem;
 }
 

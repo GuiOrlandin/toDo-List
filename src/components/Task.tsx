@@ -1,8 +1,10 @@
 import styles from "./Task.module.css";
 import checkicon from "../assets/checkicon.svg";
 import checkedicon from "../assets/checkedicon.svg";
-import { CheckCircle, Circle, Divide, Trash } from "phosphor-react";
-import { ChangeEvent, cloneElement, useState } from "react";
+import Modal from "react-modal";
+import { Trash } from "phosphor-react";
+import { useState } from "react";
+import { DeleteTaskModal } from "./DeleteTaskModal";
 
 interface task {
   id: number;
@@ -13,46 +15,61 @@ interface task {
 interface taskProps {
   task: task;
   taskList: Array<task>;
+  handleDeleteTask: (taskToDelete: task) => void;
+  handleCompletedTask: (taskId: number) => void;
 }
 
-export function Task({ task, taskList }: taskProps) {
-  const [checked, setChecked] = useState(false);
-  console.log(task)
+Modal.setAppElement("#root");
 
-  function checkTask() {
-    const taskChecked = taskList.filter((listedTask) => {
-      return task.id === listedTask.id;
-    });
-    const newValue = { ...taskChecked, isChecked: true };
-    console.log(task.id);
+export function Task({
+  task,
+  taskList,
+  handleDeleteTask,
+  handleCompletedTask,
+}: taskProps) {
+  const [checked, setChecked] = useState(task.isChecked);
+  const [modalIsOpen, setIsOpen] = useState(false);
+
+  function handleOpenModal() {
+    setIsOpen(true);
   }
 
-  function handleChangeCheck() {
-    setChecked(!checked);
-    checkTask();
+  function deleteTask() {
+    handleDeleteTask(task);
+  }
+
+  function handleCloseModal() {
+    setIsOpen(false);
   }
 
   return (
     <div className={styles.wrapperTask}>
-      {checked ? (
-        <label className={styles.riskText} htmlFor="chktask">
+      {task.isChecked ? (
+        <label className={styles.riskText} htmlFor={task.content}>
           <img src={checkedicon} alt="" />
           {task.content}
         </label>
       ) : (
-        <label htmlFor="chktask">
+        <label htmlFor={task.content}>
           <img src={checkicon} alt="" />
           {task.content}
         </label>
       )}
       <input
-        onChange={handleChangeCheck}
+        onChange={() => handleCompletedTask(task.id)}
         checked={checked}
         type="checkbox"
-        id="chktask"
+        id={task.content}
         value="on"
       />
-      <Trash size={24} className={styles.trash} />
+      <button onClick={handleOpenModal} className={styles.trash}>
+        <Trash size={24} />
+      </button>
+      <DeleteTaskModal
+        handleCloseModal={handleCloseModal}
+        deleteTask={deleteTask}
+        modalIsOpen={modalIsOpen}
+      />
     </div>
   );
 }
