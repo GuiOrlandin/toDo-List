@@ -2,7 +2,7 @@
 
 ## ▶ Preview
 
-[![Deploy with Vercel](https://vercel.com/button)](to-do-list-six-psi.vercel.app)
+[![Deploy with Vercel](https://vercel.com/button)](https://to-do-list-six-psi.vercel.app/)
 
 ## 📃 About
 
