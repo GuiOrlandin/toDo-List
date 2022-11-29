@@ -38,8 +38,6 @@
   appearance: none;
 }
 
-
-
 .trash {
   color: var(--gray-400);
   cursor: pointer;

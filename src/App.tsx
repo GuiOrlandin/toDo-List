@@ -11,7 +11,7 @@ const initialTask = [
     id: nextId(),
     content: "text1",
     publishedAt: new Date("2022-11-20 21:52:00"),
-  }
+  },
 ];
 interface taskProps {
   id: string;

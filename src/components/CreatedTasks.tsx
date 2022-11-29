@@ -14,9 +14,13 @@ interface taskProps {
   isChecked: boolean;
 }
 
-export function CreatedTasks({ taskList, handleDeleteTask, handleCompletedTask }: cratedTasksProps) {
+export function CreatedTasks({
+  taskList,
+  handleDeleteTask,
+  handleCompletedTask,
+}: cratedTasksProps) {
   const tasksLength = taskList.length;
-  const completedTasksLengh = taskList.filter((task) => task.isChecked).length
+  const completedTasksLengh = taskList.filter((task) => task.isChecked).length;
 
   return (
     <div>
